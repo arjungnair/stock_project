@@ -1,5 +1,6 @@
 <html lang="en">
 <head>
+    <title>Sign In</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <style>
         
@@ -278,12 +279,13 @@ input[type=text]:placeholder {
                 </fieldset>
                 <button type="submit" class="btn btn-primary">SIGN UP</button>
               </form>
-              <div id="formFooter">
-                  <a class="underlineHover" href="{% url 'register' %}">Doesn't Have an Account?</a>
-                </div> 
+              
 
-        
+                </div>
           </div>
+          <div id="formFooter">
+              <a class="underlineHover" href="{% url 'register' %}">Doesn't Have an Account?</a>
+            </div> 
         </div>
 </body>
 </html>
