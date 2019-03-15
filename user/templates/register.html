@@ -1,30 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+<head> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+
+<style>
+  body{
+    height: 100vh;
+  
+    }
+</style>
 </head>
-<body>
-    {% load crispy_forms_tags %}
-        <div class="jumbotron">
-                <h1 class="display-2">Title</h1>
-                <p class="lead">Subtitle</p>
-                <form method="POST">
-                    {% csrf_token %}
-                    <fieldset class="form-group">
-                        <legend class="border-bottom mb-4">
-                            JOIN TODAY
-                        </legend>
-                        {{ form|crispy }}
-                    </fieldset>
-                    <button type="submit" class="btn btn-primary">SIGN UP</button>
-                </form>
-                 <div class="border-top pt-3" >
-                     <small class="text-muted"> <a class="="ml-2" href="{% url 'login' %}">Have a Account?</a> </small>
-                 </div>      
-            </div>            
+
+<body background="images (2).jpg">
+        
+        <div class="view full-page-intro" style="background-image: url('https://www.google.com.np/imgres?imgurl=https%3A%2F%2Fwww.w3schools.com%2Fw3css%2Fimg_lights.jpg&imgrefurl=https%3A%2F%2Fwww.w3schools.com%2Fw3css%2Fw3css_images.asp&docid=R0KnAtfyBDsyiM&tbnid=kwgHAQqTiLQXLM%3A&vet=10ahUKEwj5z9nr277bAhWBbX0KHZzyAS8QMwitASgBMAE..i&w=600&h=400&bih=702&biw=1366&q=image&ved=0ahUKEwj5z9nr277bAhWBbX0KHZzyAS8QMwitASgBMAE&iact=mrc&uact=8'); background-repeat: no-repeat; background-size: cover;">
+                <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+                  <div class="container">
+                    <div class="row wow fadeIn">
+                      <div class="col-md-6 mb-4 white-text text-center text-md-left">
+                        <h1 class="display-4 font-weight-bold">Sign UP</h1>
+                        <hr class="hr-light">
+                        <p>
+                          <strong>For the more information</strong>
+                        </p>
+                        <p class="mb-4 d-none d-md-block">
+                          <strong>Quickly get information from new leads and customers by signing up .WIth their information, you can funnel them into new accounts in an instant.Follow us on FACEBOOK</strong>
+                        </p>
+                       
+                       </div>
+                       <div class="col-md-6 col-xl-5 mb-4">
+                        <div class="card">
+                          <div class="card-body">
+                                {% load crispy_forms_tags %}
+                                <form method="POST">
+                                  {% csrf_token %}
+                                 <fieldset class="form-group">
+                                  <legend class="border-bottom mb-4">
+                                   Sign Up Today
+                                  </legend>
+                                   {{ form|crispy }}
+                                  </fieldset>
+                                  <button type="submit" class="btn btn-primary">SIGN UP</button>
+                                  </form>
+                      <div class="border-top pt-3" >
+                      <small class="text-muted"> <a href="{% url 'login'%}">Have a Account?</a> </small>
+                      </div> 
+                  
+                </div>                             
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+           
+              
 </body>
 </html>
 
