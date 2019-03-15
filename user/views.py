@@ -4,6 +4,7 @@ from django.contrib import messages
 from .forms import UserRegisterForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from .models import data
 
 def index(request):
     return render(request, 'index.html')
