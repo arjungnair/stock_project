@@ -1,4 +1,5 @@
-import csv
-input_file = csv.DictReader(open("/static/1.csv"))
-for row in input_file:
-    print row
+import pandas as pd
+import numpy as np
+df = pd.read_csv("/static/1.csv")
+row=df.values.tolist()
+print(row)
