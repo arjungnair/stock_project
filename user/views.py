@@ -19,7 +19,7 @@ def register(request):
             if user:
                 messages.success(request,f'Accounts Created for {username}! You can now log in')
                 login(request, user)
-            return redirect('login')  
+                return redirect('profile')  
 
     else:
         form = UserRegisterForm()
