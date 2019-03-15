@@ -5,6 +5,9 @@ from .forms import UserRegisterForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
+def index(request):
+    return render(request, 'index.html')
+
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
@@ -25,6 +28,5 @@ def register(request):
 @login_required
 def profile(request):
     return render(request, 'profile.html')
-
 
 
