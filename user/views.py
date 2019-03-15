@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect  
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import UserRegisterForm
@@ -23,7 +23,7 @@ def register(request):
 
     else:
         form = UserRegisterForm()
-    return render(request, 'register.html',{'form':form})
+    return render(request, 'register.html', {'form':form})
 
 @login_required
 def profile(request):
