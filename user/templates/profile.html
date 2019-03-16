@@ -37,7 +37,7 @@
   <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
-      <a class="nav-link" href="#">Sign out</a>
+      <a class="nav-link" href="{% url 'logout' %}">Sign out</a>
     </li>
   </ul>
 </nav>
@@ -146,7 +146,6 @@
       {% if user.is_authenticated %}
      <h1 class="display-1"> your name is {{user.username}} </h1>
      <br>
-     <img class="img-thumbnail" src="/static/1.png" >
      <p class="lead">
              <a class="btn btn-primary btn-lg" href="/logout" role="button">logout</a>
          </p>

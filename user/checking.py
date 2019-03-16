@@ -1,18 +1,15 @@
+import sqlite3
+
 def create_connection(db_file):
-
-    try:
-        conn = sqlite3.connect(db_file)
-        return conn
-    except Error as e:
-        print(e)
-
-    return None
+    conn = sqlite3.connect(db_file)
+    return conn
+    
 
 
 def select_task_by_priority(conn, priority):
     a=input("Enter the required company :")
     cur = conn.cursor()
-    cur.execute("SELECT Name FROM tasks WHERE Symbol=?", (a))
+    cur.execute("SELECT Name FROM COMPANY WHERE Symbol=?", (a))
 
     rows = cur.fetchall()
 
@@ -21,7 +18,7 @@ def select_task_by_priority(conn, priority):
 
 
 def main():
-    database = "C:\\sqlite\db\pythonsqlite.db"
+    database = "com.db"
     conn = create_connection(database)
     with conn:
         print("1. Query task by priority:")
