@@ -2,10 +2,13 @@
 <!doctype html>
 <html lang="en">
   <head>
+        <meta http equiv="content-type" content="text/html; charset=UTF-8"/>
+        <script src="jquery-3.3.1.js"></script>
+        <script src="jquery-3.2.1.js"></script>
+        <script src="jquery.js"></script>
+        <script src="plotly.min.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script>
-
-        </script>
+        
 
     <style>
       .bd-placeholder-img {
@@ -51,6 +54,12 @@
       {
               float : center;
               justify-content : space-around;
+      }
+      .malar
+      {
+        float : right;
+        width:75%;
+        height:100vh;
       }
     </style>
   </head>
@@ -208,4 +217,17 @@
     </main>
   </div>
 </div>
+<section class = "malar">
+    <script>
+        function getData(){
+          return Math.random();
+        }
+        Plotly.plot('chart',[{
+          y:[getData()],type:'scatter'
+        }]);
+        setInterval(function(){
+          Plotly.extendTraces('chart',{y:[[getData()]]},[0]);
+        },200);
+</script>
+</section>>
 </html>
