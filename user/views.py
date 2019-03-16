@@ -1,9 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect  
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import UserRegisterForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from .models import data
+from .checking import *
 
 def index(request):
     return render(request, 'index.html')
@@ -19,14 +21,15 @@ def register(request):
             if user:
                 messages.success(request,f'Accounts Created for {username}! You can now log in')
                 login(request, user)
-            return redirect('login')  
+                return redirect('profile')  
 
     else:
         form = UserRegisterForm()
-    return render(request, 'register.html',{'form':form})
+    return render(request, 'register.html', {'form':form})
 
 @login_required
 def profile(request):
+
     return render(request, 'profile.html')
 
 

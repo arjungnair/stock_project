@@ -1,30 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+<head> 
+  <title>
+    Sign Up
+  </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+
+<style>
+  body{
+    height: 100vh;
+    }
+  .abstract{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+  }
+  .umm{
+    position: absolute;
+    right: 50%;
+    top:23%;
+  }
+  .Term{
+    position: absolute;
+    left: -0.5mm;
+    font-size: 8mm;
+    font-family: 'Baskerville Old Face';
+  }  
+</style>
 </head>
+
 <body>
-    {% load crispy_forms_tags %}
-        <div class="jumbotron">
-                <h1 class="display-2">Title</h1>
-                <p class="lead">Subtitle</p>
-                <form method="POST">
-                    {% csrf_token %}
-                    <fieldset class="form-group">
+        
+    <div class="view full-page-intro" style="background-image: url('https://www.google.com.np/imgres?imgurl=https%3A%2F%2Fwww.w3schools.com%2Fw3css%2Fimg_lights.jpg&imgrefurl=https%3A%2F%2Fwww.w3schools.com%2Fw3css%2Fw3css_images.asp&docid=R0KnAtfyBDsyiM&tbnid=kwgHAQqTiLQXLM%3A&vet=10ahUKEwj5z9nr277bAhWBbX0KHZzyAS8QMwitASgBMAE..i&w=600&h=400&bih=702&biw=1366&q=image&ved=0ahUKEwj5z9nr277bAhWBbX0KHZzyAS8QMwitASgBMAE&iact=mrc&uact=8'); background-repeat: no-repeat; background-size: cover;">
+      <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+        <div class="container">
+          <div class="row wow fadeIn">
+            <div class="col-md-6 mb-4 white-text text-center text-md-left">
+              <h6 class="display-4">Changing Humanity</h6>
+              <hr class="hr-light">
+              <p class="Term">
+                <strong>Stockify Technologies </strong>
+               </p>
+               <p class="umm">The stock market refers to public markets that exist for issuing, buying and selling stocks that trade on a stock exchange or over-the-counter. Stocks, also known as equities, represent fractional ownership in a company, and the stock market is a place where investors can buy and sell ownership of such investible assets. An efficiently functioning stock market is considered critical to economic development, as it gives companies the ability to quickly access capital from the public.</p>
+              <p class="abstract">
+              Created in the vision towards Digital India Mission, Stockify technologies aim to provide the best service to the users. We compare the data from last Two years and through our Algorithm predicts the possible market value for tomorrow.
+              </p>
+              
+             
+             </div>
+             <div class="col-md-6 col-xl-5 mb-4">
+              <div class="card">
+                <div class="card-body">
+                      {% load crispy_forms_tags %}
+                      <form method="POST">
+                        {% csrf_token %}
+                       <fieldset class="form-group">
                         <legend class="border-bottom mb-4">
-                            JOIN TODAY
+                         Sign Up Today
                         </legend>
-                        {{ form|crispy }}
-                    </fieldset>
-                    <button type="submit" class="btn btn-primary">SIGN UP</button>
-                </form>
-                 <div class="border-top pt-3" >
-                     <small class="text-muted"> <a class="="ml-2" href="{% url 'login' %}">Have a Account?</a> </small>
-                 </div>      
-            </div>            
+                         {{ form|crispy }}
+                        </fieldset>
+                        <button type="submit" class="btn btn-primary">SIGN UP</button>
+                        </form>
+            <div class="border-top pt-3" >
+            <small class="text-muted"> <a href="{% url 'login'%}">Have a Account?</a> </small>
+            </div> 
+        
+      </div>                             
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>             
+              
 </body>
 </html>
 
