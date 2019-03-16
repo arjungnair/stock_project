@@ -31,7 +31,7 @@
       }
       #sec1
       {
-              background : linear-gradient(360deg,#e6e6e6,#fff);
+              background : radial-gradient(#c0c0c0 ,#fff);
       }
       .dtset li
       {
@@ -51,6 +51,22 @@
       {
               float : center;
               justify-content : space-around;
+      }
+      .dis1
+      {
+              margin-left:5px;
+              padding : 0px;
+              float : left;
+              font-size : 30px;
+      }
+      .dis2
+      {
+              margin-right:5px;
+              padding : 0px;
+              top : 50%;
+              left : 50%;
+              float : right;
+              font-size : 20px;
       }
     </style>
   </head>
@@ -170,13 +186,20 @@
 
       <section id="sec2">
               <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2"></h1>
-                <div class="btn-toolbar mb-2 mb-md-0">
-                  <div class="btn-group mr-2">
-
-                  </div>
-                </div>
-                </h1>
+                          <h1 class="dis1">USER PAGE</h1>
+                          {% if user.is_authenticated %}
+                         <h1 class="dis2"> your name is {{user.username}} </h1>
+                         <br>
+                         <p class="lead">
+                                 <a class="btn btn-primary btn-lg" href="/logout" role="button">logout</a>
+                             </p>
+                         {% else %}
+                         <h1 class="dis2"> you are not logged in </h1>
+                        <br>
+                        <p class="lead">
+                            <a class="btn btn-primary btn-lg " href="/login" role="button">login</a>
+                        </p>
+                        {% endif %}
               </div>
       </section>
       <section id="sec2">
@@ -190,20 +213,7 @@
                           </ul>
               </div>
       </section>
-      <h1 class="display-3">USER PAGE</h1>
-      {% if user.is_authenticated %}
-     <h1 class="display-1"> your name is {{user.username}} </h1>
-     <br>
-     <p class="lead">
-             <a class="btn btn-primary btn-lg" href="/logout" role="button">logout</a>
-         </p>
-     {% else %}
-     <h1 class="display-1"> you are not logged in </h1>
-    <br>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg " href="/login" role="button">login</a>
-    </p>
-    {% endif %}
+
 
     </main>
   </div>
