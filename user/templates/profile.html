@@ -4,7 +4,7 @@
   <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script>
-                
+
         </script>
 
     <style>
@@ -29,9 +29,57 @@
       {
               padding-left:5%;
       }
+      #sec1
+      {
+              background : radial-gradient(#c0c0c0 ,#fff);
+      }
+      .dtset li
+      {
+              display :inline-block;
+              margin : 10px;
+              border : .5px solid #808080;
+              border-radius : 10px;
+              padding : 5px 20px;
+      }
+      .dtset li:hover
+      {
+              color : #fff;
+              background : #A9A9A9;
+              cursor :pointer;
+      }
+      .databar
+      {
+              float : center;
+              justify-content : space-around;
+      }
+      .dis1
+      {
+              margin-left:5px;
+              padding : 0px;
+              float : left;
+              font-size : 30px;
+      }
+      .dis2
+      {
+              margin-right:5px;
+              padding : 0px;
+              top : 50%;
+              left : 50%;
+              float : right;
+              font-size : 20px;
+      }
     </style>
   </head>
   <body>
+      {% if  messages %}
+
+      {% for message in messages %}
+        <div class="alert alert-success">
+         {{ message }}
+        </div>
+      {% endfor %}
+  
+     {% endif %}
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Stockify</a>
   <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
@@ -119,16 +167,8 @@
         </ul>
       </div>
     </nav>
-    {% if  messages %}
-       
-    {% for message in messages %}
-      <div class="alert alert-success">
-       {{ message }}
-      </div>
-    {% endfor %}
-      
-   {% endif %}
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <section id='sec1'>
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Dashboard</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
